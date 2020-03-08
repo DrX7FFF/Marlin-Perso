@@ -932,6 +932,12 @@ void setup() {
     #endif
   #endif
 
+  //TEST
+  #if HAS_FILAMENT_SENSOR
+    runout.setup();
+  #endif
+  //Fin Test
+
   SERIAL_ECHOLNPGM("start");
   SERIAL_ECHO_START();
 
