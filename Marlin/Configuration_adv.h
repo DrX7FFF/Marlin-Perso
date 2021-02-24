@@ -1603,7 +1603,7 @@
  *
  * Warning: Does not respect endstops!
  */
-//#define BABYSTEPPING
+#define BABYSTEPPING
 #if ENABLED(BABYSTEPPING)
   //#define INTEGRATED_BABYSTEPPING         // EXPERIMENTAL integration of babystepping into the Stepper ISR
   //#define BABYSTEP_WITHOUT_HOMING
@@ -1650,7 +1650,7 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-#define LIN_ADVANCE
+//#define LIN_ADVANCE
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
   #define LIN_ADVANCE_K 0       // Unit: mm compression per 1mm/s extruder speed
@@ -2125,7 +2125,7 @@
   #define FILAMENT_CHANGE_ALERT_BEEPS          3  // Number of alert beeps to play when a response is needed.
   #define PAUSE_PARK_NO_STEPPER_TIMEOUT           // Enable for XYZ steppers to stay powered on during filament change.
 
-  #define PARK_HEAD_ON_PAUSE                    // Park the nozzle during pause and filament change.
+  //#define PARK_HEAD_ON_PAUSE                    // Park the nozzle during pause and filament change.
   //#define HOME_BEFORE_FILAMENT_CHANGE           // If needed, home before parking for filament change
 
   #define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu.
@@ -3159,7 +3159,7 @@
 //#define NO_WORKSPACE_OFFSETS
 
 // Extra options for the M114 "Current Position" report
-//#define M114_DETAIL         // Use 'M114` for details to check planner calculations
+#define M114_DETAIL         // Use 'M114` for details to check planner calculations
 //#define M114_REALTIME       // Real current position based on forward kinematics
 //#define M114_LEGACY         // M114 used to synchronize on every call. Enable if needed.
 
