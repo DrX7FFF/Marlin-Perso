@@ -436,7 +436,7 @@
  */
 #define HOTEND_IDLE_TIMEOUT
 #if ENABLED(HOTEND_IDLE_TIMEOUT)
-  #define HOTEND_IDLE_TIMEOUT_SEC (5*60)    // (seconds) Time without extruder movement to trigger protection
+  #define HOTEND_IDLE_TIMEOUT_SEC (8*60)    // (seconds) Time without extruder movement to trigger protection
   #define HOTEND_IDLE_MIN_TRIGGER   180     // (°C) Minimum temperature to enable hotend protection
   #define HOTEND_IDLE_NOZZLE_TARGET   0     // (°C) Safe temperature for the nozzle after timeout
   #define HOTEND_IDLE_BED_TARGET      0     // (°C) Safe temperature for the bed after timeout
@@ -1129,7 +1129,7 @@
 
 #if EITHER(IS_ULTIPANEL, EXTENSIBLE_UI)
   #define MANUAL_FEEDRATE { 50*60, 50*60, 4*60, 2*60 } // (mm/min) Feedrates for manual moves along X, Y, Z, E from panel
-  #define FINE_MANUAL_MOVE 0.025    // (mm) Smallest manual move (< 0.1mm) applying to Z on most machines
+  #define FINE_MANUAL_MOVE 0.01    // (mm) Smallest manual move (< 0.1mm) applying to Z on most machines
   #if IS_ULTIPANEL
     #define MANUAL_E_MOVES_RELATIVE // Display extruder move distance rather than "position"
     #define ULTIPANEL_FEEDMULTIPLY  // Encoder sets the feedrate multiplier on the Status Screen
@@ -1288,7 +1288,7 @@
   // Since the FAT gets out of order with usage, SDCARD_SORT_ALPHA is recommended.
   #define SDCARD_RATHERRECENTFIRST
 
-  #define SD_MENU_CONFIRM_START             // Confirm the selected SD file before printing
+  //#define SD_MENU_CONFIRM_START             // Confirm the selected SD file before printing
 
   //#define NO_SD_AUTOSTART                 // Remove auto#.g file support completely to save some Flash, SRAM
   //#define MENU_ADDAUTOSTART               // Add a menu option to run auto#.g files
@@ -3448,16 +3448,16 @@
  */
 
 // Custom Menu: Main Menu
-#define CUSTOM_MENU_MAIN
+//#define CUSTOM_MENU_MAIN
 #if ENABLED(CUSTOM_MENU_MAIN)
   //#define CUSTOM_MENU_MAIN_TITLE "Custom Commands"
   #define CUSTOM_MENU_MAIN_SCRIPT_DONE "M117 User Script Done"
-  //#define CUSTOM_MENU_MAIN_SCRIPT_AUDIBLE_FEEDBACK
-  #define CUSTOM_MENU_MAIN_SCRIPT_RETURN   // Return to status screen after a script
+  #define CUSTOM_MENU_MAIN_SCRIPT_AUDIBLE_FEEDBACK
+  //#define CUSTOM_MENU_MAIN_SCRIPT_RETURN   // Return to status screen after a script
   #define CUSTOM_MENU_MAIN_ONLY_IDLE         // Only show custom menu when the machine is idle
 
-  //#define MAIN_MENU_ITEM_1_DESC "Home & UBL Info"
-  //#define MAIN_MENU_ITEM_1_GCODE "G28\nG29 W"
+  #define MAIN_MENU_ITEM_1_DESC "Home & UBL Info"
+  #define MAIN_MENU_ITEM_1_GCODE "G28\nG29 W"
   //#define MAIN_MENU_ITEM_1_CONFIRM          // Show a confirmation dialog before this action
 
   #define MAIN_MENU_ITEM_2_DESC "Preheat for " PREHEAT_1_LABEL
